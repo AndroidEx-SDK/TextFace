@@ -30,13 +30,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static android.content.ContentValues.TAG;
-
 /**
  * Created by cts on 17/5/26.
  */
 
 public class InitUtil {
+    private final static String TAG="MainActivity";
     // 要校验的权限
     public static String[] PERMISSIONS = new String[]{Manifest.permission.CAMERA};
 
@@ -278,18 +277,18 @@ public class InitUtil {
      */
     public static void saveJsonTimes(String time, Context context) {
         String str = getString("time.txt",context);
-        Log.e("MainActivity", "====已经存储的数据:  2" + str);
+        Log.e(TAG, "====已经存储的数据:  2" + str);
         FileOutputStream out = null;
         try {
             out = context.openFileOutput("time.txt", Context.MODE_PRIVATE);
-            Log.e("MainActivity", "====已经存储的数据:  3" + str);
+            Log.e(TAG, "====已经存储的数据:  3" + str);
             if (str != null && str != "") {
-                Log.e("MainActivity", "====已经存储的数据:  " + str);
+                Log.e(TAG, "====已经存储的数据:  " + str);
                 out.write((str + "," + time).getBytes("utf-8"));//将数据变为字符串后保存
-                Log.e("MainActivity", "====合并后数据: " + str + "," + time);
+                Log.e(TAG, "====合并后数据: " + str + "," + time);
             } else {
                 out.write(time.getBytes("utf-8"));//将数据变为后保存
-                Log.e("MainActivity", "====数据1: " + time);
+                Log.e(TAG, "====数据1: " + time);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
