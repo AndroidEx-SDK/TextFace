@@ -1,1 +1,1 @@
-include ':openCVLibrary2411', ':aexFaceCard'
+include ':openCVLibrary2411', ':aexFaceCard', ':myapplication'

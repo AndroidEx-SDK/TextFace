@@ -38,6 +38,7 @@ public class BackgroundSubtractor extends Algorithm {
     protected BackgroundSubtractor(long addr) { super(addr); }
 
 
+
     //
     // C++:  void BackgroundSubtractor::operator ()(Mat image, Mat& fgmask, double learningRate = 0)
     //
